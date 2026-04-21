@@ -23,6 +23,11 @@ jobs:
       # v5 actions run on Node.js 24 — silences the Sept-2026 Node-20 deprecation warning.
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          # Persist the GITHUB_TOKEN as the push credential for `git push` below.
+          persist-credentials: true
+          # Full history so `git pull --rebase` can resolve from any ancestor.
+          fetch-depth: 0
 
       - name: Setup Node 22
         uses: actions/setup-node@v5
@@ -33,13 +38,33 @@ jobs:
         run: node collect.js
 
       - name: Commit snapshot
+        shell: bash
         run: |
+          set -eo pipefail
           git config user.name  "aave-liquidity-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add data/
           if git diff --cached --quiet; then
-            echo "No data changes."
-          else
-            git commit -m "data: snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            git push
+            echo "▸ No data changes — skipping commit."
+            exit 0
           fi
+
+          git commit -m "data: snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          # Retry on the classic non-fast-forward race (another run pushed first).
+          # Rebase our single data commit on top of remote main before re-pushing.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "▸ Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "▸ Push attempt $attempt failed — rebasing onto origin/main and retrying…"
+            git fetch origin main
+            git pull --rebase --autostash origin main || true
+            sleep 2
+          done
+
+          echo "::error::git push failed after 3 attempts."
+          echo "::error::If this is the first failure, check: Settings → Actions → General → Workflow permissions → 'Read and write permissions'."
+          exit 1
