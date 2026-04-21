@@ -33,7 +33,6 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '22'
-          cache: 'npm'
 
       # On-chain collector now depends on viem, so we install once per run.
       # No lockfile yet — `--no-audit --no-fund` keeps the log short and fast.
