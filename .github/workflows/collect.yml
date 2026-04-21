@@ -33,6 +33,12 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '22'
+          cache: 'npm'
+
+      # On-chain collector now depends on viem, so we install once per run.
+      # No lockfile yet — `--no-audit --no-fund` keeps the log short and fast.
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund --omit=dev
 
       - name: Run collector
         run: node collect.js
@@ -44,6 +50,8 @@ jobs:
           git config user.name  "aave-liquidity-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Ignore node_modules that the install step dropped in the workspace.
+          # Only the data/ changes should make it into the repo.
           git add data/
           if git diff --cached --quiet; then
             echo "▸ No data changes — skipping commit."
