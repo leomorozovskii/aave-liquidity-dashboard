@@ -1,18 +1,18 @@
 {
-  "lastUpdated": 1776804084266,
-  "ethPx": 2320.161786980324,
-  "btcPx": 75735.7960921792,
+  "lastUpdated": 1776805659167,
+  "ethPx": 2315.846521992774,
+  "btcPx": 75710.27967789005,
   "retentionDays": 7,
   "chains": {
     "Ethereum": {
       "reserveCount": 69,
-      "snapshotCount": 2,
-      "sizeKb": 45
+      "snapshotCount": 3,
+      "sizeKb": 67
     },
     "Arbitrum": {
       "reserveCount": 17,
-      "snapshotCount": 2,
-      "sizeKb": 11
+      "snapshotCount": 3,
+      "sizeKb": 17
     },
     "Optimism": {
       "reserveCount": 0,
@@ -20,33 +20,33 @@
     },
     "Polygon": {
       "reserveCount": 13,
-      "snapshotCount": 2,
-      "sizeKb": 9
+      "snapshotCount": 3,
+      "sizeKb": 13
     },
     "Base": {
       "reserveCount": 14,
-      "snapshotCount": 2,
-      "sizeKb": 10
+      "snapshotCount": 3,
+      "sizeKb": 14
     },
     "Avalanche": {
       "reserveCount": 13,
-      "snapshotCount": 2,
-      "sizeKb": 8
+      "snapshotCount": 3,
+      "sizeKb": 13
     },
     "BSC": {
       "reserveCount": 8,
-      "snapshotCount": 2,
-      "sizeKb": 6
+      "snapshotCount": 3,
+      "sizeKb": 8
     },
     "Gnosis": {
       "reserveCount": 7,
-      "snapshotCount": 2,
-      "sizeKb": 5
+      "snapshotCount": 3,
+      "sizeKb": 7
     },
     "Scroll": {
       "reserveCount": 5,
-      "snapshotCount": 2,
-      "sizeKb": 4
+      "snapshotCount": 3,
+      "sizeKb": 5
     },
     "Metis": {
       "reserveCount": 0,
