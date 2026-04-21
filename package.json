@@ -1,11 +1,14 @@
 {
   "name": "aave-liquidity-collector",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "description": "24x7 Aave V3 liquidity snapshot collector — runs as a GitHub Actions cron, persists to JSON in this repo.",
+  "description": "24x7 Aave V3 liquidity snapshot collector — reads on-chain via Aave's AaveProtocolDataProvider on each chain, persists JSON in this repo. Runs under GitHub Actions cron every 5 minutes.",
   "scripts": {
     "collect": "node collect.js"
+  },
+  "dependencies": {
+    "viem": "^2.48.0"
   },
   "engines": {
     "node": ">=20"
