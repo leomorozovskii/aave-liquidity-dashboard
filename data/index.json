@@ -1,59 +1,59 @@
 {
-  "lastUpdated": 1776902273350,
-  "ethPx": 2378.111785314757,
-  "btcPx": 78249.59957721765,
+  "lastUpdated": 1776910068913,
+  "ethPx": 2363.6380365650357,
+  "btcPx": 78257.58106138514,
   "retentionDays": 7,
   "dataSource": "Aave V3 on-chain (AaveProtocolDataProvider)",
   "chains": {
     "Ethereum": {
       "reserveCount": 66,
-      "snapshotCount": 28,
-      "sizeKb": 917
+      "snapshotCount": 29,
+      "sizeKb": 951
     },
     "Arbitrum": {
       "reserveCount": 20,
-      "snapshotCount": 28,
-      "sizeKb": 280
+      "snapshotCount": 29,
+      "sizeKb": 291
     },
     "Optimism": {
       "reserveCount": 14,
-      "snapshotCount": 25,
-      "sizeKb": 189
+      "snapshotCount": 26,
+      "sizeKb": 197
     },
     "Polygon": {
       "reserveCount": 21,
-      "snapshotCount": 28,
-      "sizeKb": 296
+      "snapshotCount": 29,
+      "sizeKb": 307
     },
     "Base": {
       "reserveCount": 15,
-      "snapshotCount": 28,
-      "sizeKb": 209
+      "snapshotCount": 29,
+      "sizeKb": 217
     },
     "Avalanche": {
       "reserveCount": 18,
-      "snapshotCount": 28,
-      "sizeKb": 250
+      "snapshotCount": 29,
+      "sizeKb": 259
     },
     "BSC": {
       "reserveCount": 8,
-      "snapshotCount": 28,
-      "sizeKb": 120
+      "snapshotCount": 29,
+      "sizeKb": 124
     },
     "Gnosis": {
       "reserveCount": 9,
-      "snapshotCount": 28,
-      "sizeKb": 129
+      "snapshotCount": 29,
+      "sizeKb": 134
     },
     "Scroll": {
       "reserveCount": 5,
-      "snapshotCount": 28,
-      "sizeKb": 75
+      "snapshotCount": 29,
+      "sizeKb": 78
     },
     "Metis": {
       "reserveCount": 5,
-      "snapshotCount": 25,
-      "sizeKb": 69
+      "snapshotCount": 26,
+      "sizeKb": 72
     }
   }
 }
